@@ -12,9 +12,22 @@ public class ShoppingCartImpl implements Cart{
     }
 
     @Override
-    public Item addItem(String name) {
+    public Item addItem() {
         Item item = new Item();
-        item.setName(name);
+        itemList.add(item);
+        return item;
+    }
+
+    @Override
+    public Item addItem(String name) {
+        Item item = new Item(name);
+        itemList.add(item);
+        return item;
+    }
+
+    @Override
+    public Item addItem(String name, Long id) {
+        Item item = new Item(name, id);
         itemList.add(item);
         return item;
     }

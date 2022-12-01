@@ -1,14 +1,20 @@
 package com.company;
 
-public class Item {
+public class Item extends GenericItem {
 
-    String name;
+    private String name;
 
     public Item(){
 
     }
 
-    public Item (String name){
+    public Item(String name){
+        super();
+        this.name = name;
+    }
+
+    public Item(String name, Long id){
+        super(id);
         this.name = name;
     }
 
@@ -20,10 +26,5 @@ public class Item {
         return this.name;
     }
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "name='" + name + '\'' +
-                '}';
-    }
+
 }
